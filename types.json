@@ -1,0 +1,22 @@
+{
+    "Address": "MultiAddress",
+    "LookupSource": "MultiAddress",
+    "EosProcessedBlocks": {
+      "blocks": "Vec<u64>"
+    },
+    "Wallet": {
+      "polkadot_address": "Vec<u8>",
+      "VTBc_balance": "u64",
+      "VTBt_balance": "u64",
+      "controlled": "u64",
+      "crypto_addresses": "Vec<CryptoDetail>"
+    },
+    "CryptoDetail": {
+      "crypto_network": "Vec<u8>",
+      "crypto_addresses": "Vec<u8>",
+      "deposit_balance": "u64"
+    },
+    "WithdrawIndexingData": "(pub Vec<u8>, pub Vec<u8>, pub u64)",
+    "CryptoAccount": "Vec<u8>",
+    "TokenType": "{EOS,ETH,VTBc,VTBt}"
+  }
