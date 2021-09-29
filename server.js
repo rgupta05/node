@@ -15,7 +15,7 @@ const init = async () => {
 init()
 app.use(express.json())
 
-app.get('/wallet/:address',async (req,res) => {
+app.get('/api/wallet/:address',async (req,res) => {
     let { address } = req.params
     
     try {
