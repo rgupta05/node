@@ -46,7 +46,7 @@ app.get('/wallet/:address',async (req,res) => {
     
 })
 
-app.listen(8080,async ()=>{
+app.listen(5000,async ()=>{
     console.log("server started")
     
 })
