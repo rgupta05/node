@@ -1,18 +1,22 @@
-const express = require("express");
+const express = require("express")
+const cors = require("cors")
 const {WsProvider,ApiPromise} = require("@polkadot/api")
 const {hexToString} = require("@polkadot/util")
 const types = require("./types.json")
 
+
 const app = express()
+
 const wsProvider = new WsProvider("ws://3.137.159.162:9945")
 var api = {}
 
 const init = async () => {
-    api = await ApiPromise.create({ provider: wsProvider,types: types });
-    console.log("api initialized");
+    api = await ApiPromise.create({ provider: wsProvider,types: types })
+    console.log("api initialized")
 }
 
 init()
+app.use(cors())
 app.use(express.json())
 
 app.get('/api/wallet/:address',async (req,res) => {
@@ -47,6 +51,6 @@ app.get('/api/wallet/:address',async (req,res) => {
 })
 
 app.listen(5000,async ()=>{
-    console.log("server started")
+    console.log("CORS enabled server started")
     
 })
